@@ -3,7 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
 
 [Table("Appointment")]
-public class AppointmentEntity {
+public class AppointmentEntity
+{
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public Guid id {get;set;}

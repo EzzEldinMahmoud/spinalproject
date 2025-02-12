@@ -24,8 +24,6 @@ public class appointmentService
         //create appointment
         
         var validDate = DateTime.ParseExact(appointmentDetails.appointment_time, "yyyy-MM-dd HH:mm", null);
-        Console.WriteLine(validDate);
-        Console.WriteLine(DateTime.Now);
 
         if (validDate < DateTime.Now)
         {
@@ -48,13 +46,7 @@ public class appointmentService
     }
     public bool deleteAppointment(Guid userId, Guid appointId)
     {
-        var findAppointment = _appointmentRepository.Appointments.FirstOrDefaultAsync(app => app.id == appointId).Result;
-
-        if (findAppointment.patient_id != userId.ToString())
-        {
-            throw new Exception("You don't have permission");
-
-        }
+        var findAppointment = _appointmentRepository.Appointments.FirstOrDefaultAsync(app => app.id == appointId && app.patient_id == userId.ToString()).Result;
         if (findAppointment == null)
         {
             throw new Exception("Appointment not found");
@@ -69,12 +61,8 @@ public class appointmentService
     }
     public AppointmentEntity getAppointment(Guid userId, Guid appointId)
     {
-        var findAppointment = _appointmentRepository.Appointments.FirstOrDefaultAsync(app => app.id == appointId).Result;
+        var findAppointment = _appointmentRepository.Appointments.FirstOrDefaultAsync(app => app.id == appointId && app.patient_id == userId.ToString()).Result;
 
-        if (findAppointment.patient_id != userId.ToString())
-        {
-            throw new Exception("You don't have permission");
-        }
         if (findAppointment == null)
         {
             throw new Exception("Appointment not found");

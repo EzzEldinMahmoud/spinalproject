@@ -21,6 +21,9 @@ public class UserEntity {
     [Column("appointments")]
 
     public IEnumerable<AppointmentEntity>? Appointments {get;set;}
+    [Column("reports")]
+
+    public IEnumerable<ReportEntity>? Reports { get; set; }
 
 
     [Column("created_at")]

@@ -16,7 +16,7 @@ var connectionString =
         + "'DefaultConnection' not found.");
 
 builder.Services.AddDbContext<appointDbContext>(options =>
-    options.UseSqlite(connectionString));
+    options.UseSqlServer(connectionString));
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddTransient<UserService>();
 builder.Services.AddTransient<appointmentService>();
@@ -24,11 +24,11 @@ builder.Services.AddTransient<appointmentService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
 app.UseCors(req =>
 {
     req.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();

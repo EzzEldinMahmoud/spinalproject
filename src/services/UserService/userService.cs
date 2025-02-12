@@ -57,7 +57,6 @@ public class UserService
         var userEntity = mapper.Map<UserEntity>(user);
         var foundUser = dbcontext.Users.FirstOrDefaultAsync(p => p.email_address == userEntity.email_address).Result;
 
-
         if (foundUser == null)
         {
             throw new Exception("User not found");

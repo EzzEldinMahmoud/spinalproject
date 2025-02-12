@@ -64,6 +64,13 @@ namespace spinalproject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
+                    b.Property<Guid?>("UserEntityid")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("cab_angle")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("cab_angle");
+
                     b.Property<DateTime>("created_at")
                         .HasColumnType("TEXT")
                         .HasColumnName("created_at");
@@ -79,12 +86,17 @@ namespace spinalproject.Migrations
                         .HasColumnType("TEXT")
                         .HasColumnName("notes");
 
-                    b.Property<string>("patient_id")
-                        .IsRequired()
+                    b.Property<Guid>("patient_id")
                         .HasColumnType("TEXT")
                         .HasColumnName("patient_id");
 
+                    b.Property<int>("status")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("status");
+
                     b.HasKey("id");
+
+                    b.HasIndex("UserEntityid");
 
                     b.ToTable("Report");
                 });
@@ -131,9 +143,18 @@ namespace spinalproject.Migrations
                         .HasForeignKey("UserEntityid");
                 });
 
+            modelBuilder.Entity("ReportEntity", b =>
+                {
+                    b.HasOne("UserEntity", null)
+                        .WithMany("Reports")
+                        .HasForeignKey("UserEntityid");
+                });
+
             modelBuilder.Entity("UserEntity", b =>
                 {
                     b.Navigation("Appointments");
+
+                    b.Navigation("Reports");
                 });
 #pragma warning restore 612, 618
         }
