@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: aspnet_app
+    build: .
+    ports:
+      - "8080:8080"  # HTTP
+      - "8081:8081"  # HTTPS
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - sqlite_data:/app/Data  # Persist SQLite database file
+
+volumes:
+  sqlite_data:

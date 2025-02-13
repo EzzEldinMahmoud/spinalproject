@@ -47,8 +47,9 @@ namespace spinalproject.Migrations
                         .HasColumnType("TEXT")
                         .HasColumnName("report_id");
 
-                    b.Property<int>("status")
-                        .HasColumnType("INTEGER")
+                    b.Property<string>("status")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
                         .HasColumnName("status");
 
                     b.HasKey("id");
@@ -90,8 +91,9 @@ namespace spinalproject.Migrations
                         .HasColumnType("TEXT")
                         .HasColumnName("patient_id");
 
-                    b.Property<int>("status")
-                        .HasColumnType("INTEGER")
+                    b.Property<string>("status")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
                         .HasColumnName("status");
 
                     b.HasKey("id");

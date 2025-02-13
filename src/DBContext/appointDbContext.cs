@@ -15,7 +15,7 @@ namespace spinalproject.src.appointDbContext
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             // connect to sqlite database
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
         }
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<ReportEntity> Reports { get; set; }

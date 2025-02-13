@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace spinalproject.Migrations
 {
     /// <inheritdoc />
-    public partial class changingreportinuser2 : Migration
+    public partial class lasttime : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,7 +32,7 @@ namespace spinalproject.Migrations
                 columns: table => new
                 {
                     id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    status = table.Column<int>(type: "INTEGER", nullable: false),
+                    status = table.Column<string>(type: "TEXT", nullable: false),
                     patient_id = table.Column<string>(type: "TEXT", nullable: false),
                     created_at = table.Column<DateTime>(type: "TEXT", nullable: false),
                     appointment_time = table.Column<DateTime>(type: "TEXT", nullable: false),
@@ -57,7 +57,7 @@ namespace spinalproject.Migrations
                     id = table.Column<Guid>(type: "TEXT", nullable: false),
                     diagnosis = table.Column<string>(type: "TEXT", nullable: false),
                     notes = table.Column<string>(type: "TEXT", maxLength: 500, nullable: false),
-                    status = table.Column<int>(type: "INTEGER", nullable: false),
+                    status = table.Column<string>(type: "TEXT", nullable: false),
                     cab_angle = table.Column<int>(type: "INTEGER", nullable: false),
                     patient_id = table.Column<Guid>(type: "TEXT", nullable: false),
                     created_at = table.Column<DateTime>(type: "TEXT", nullable: false),

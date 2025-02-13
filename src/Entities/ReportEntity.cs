@@ -16,7 +16,7 @@ public class ReportEntity
     public string notes {get;set;}
     [Column("status")]
     [Required]
-    public PatientStatus status { get; set; } = PatientStatus.normal;
+    public string status { get; set; } 
     [Column("cab_angle")]
     [Required]
     [Range(0, 180)]
@@ -31,13 +31,5 @@ public class ReportEntity
 
     public DateTime created_at {get;set;} = DateTime.Now;
 
-    
-    /* id = db.Column(db.Integer, primary_key=True)
-    diagnosis = db.Column(db.String(200), nullable=False)
-    treatment_plan = db.Column(db.Text, nullable=False)
-    notes = db.Column(db.Text)
-    patient_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    doctor_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    created_at = db.Column(db.DateTime, default=datetime.utcnow) */
     
 }

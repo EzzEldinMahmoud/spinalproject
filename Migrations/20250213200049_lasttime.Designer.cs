@@ -11,8 +11,8 @@ using spinalproject.src.appointDbContext;
 namespace spinalproject.Migrations
 {
     [DbContext(typeof(appointDbContext))]
-    [Migration("20250212133459_changingreportinuser2")]
-    partial class changingreportinuser2
+    [Migration("20250213200049_lasttime")]
+    partial class lasttime
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,8 +50,9 @@ namespace spinalproject.Migrations
                         .HasColumnType("TEXT")
                         .HasColumnName("report_id");
 
-                    b.Property<int>("status")
-                        .HasColumnType("INTEGER")
+                    b.Property<string>("status")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
                         .HasColumnName("status");
 
                     b.HasKey("id");
@@ -93,8 +94,9 @@ namespace spinalproject.Migrations
                         .HasColumnType("TEXT")
                         .HasColumnName("patient_id");
 
-                    b.Property<int>("status")
-                        .HasColumnType("INTEGER")
+                    b.Property<string>("status")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
                         .HasColumnName("status");
 
                     b.HasKey("id");

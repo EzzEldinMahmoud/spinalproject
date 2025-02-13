@@ -16,10 +16,12 @@ var connectionString =
         + "'DefaultConnection' not found.");
 
 builder.Services.AddDbContext<appointDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseSqlite(connectionString));
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddTransient<UserService>();
 builder.Services.AddTransient<appointmentService>();
+builder.Services.AddTransient<ReportService>();
+
 
 var app = builder.Build();
 

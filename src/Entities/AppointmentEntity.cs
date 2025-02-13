@@ -10,7 +10,7 @@ public class AppointmentEntity
     public Guid id {get;set;}
     [Column("status")]
     [Required]
-    public PatientStatus status {get;set;} = PatientStatus.normal;
+    public string status {get;set;}
     
     [Column("patient_id")]
     [ForeignKey("UserEntity")]
@@ -31,14 +31,5 @@ public class AppointmentEntity
 
     public  Guid? reportDetails {get;set;} 
 
-
-
-    
-    /*  id = db.Column(db.Integer, primary_key=True)
-    date = db.Column(db.Date, nullable=False)
-    time = db.Column(db.Time, nullable=False)
-    patient_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    doctor_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    status = db.Column(db.String(20), default='confirmed') */
     
 }
