@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("spinalproject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0fb004f3bb3d69bceee668fee36e40f3f3be4260")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9dc8bf0f4758601a344863f58bb9e46f147054a0")]
 [assembly: System.Reflection.AssemblyProductAttribute("spinalproject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("spinalproject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

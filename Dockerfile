@@ -21,7 +21,7 @@ COPY --from=build /app/publish .
 # Ensure SQLite database file is available
 VOLUME /app/Data
 # Run database migrations before starting the app
-COPY /app.db /app/Data/
+COPY /app.db /app
 
 
 
